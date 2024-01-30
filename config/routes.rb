@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root to: "dresses#index"
-  resources :dresses, only: %i[new create]
+  resources :dresses, only: %i[new create] do
+    resources :bookings, only: %i[new create]
+  end
   resources :users, only: :show
 end
