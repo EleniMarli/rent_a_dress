@@ -3,9 +3,9 @@
 <%= simple_form_for @dress do |f| %>
   <%= f.input :title%>
   <%= f.input :description%>
-  <%= f.input :size, :collection => ['s', 'm', 'l', 'xl', 'xxl'] %>
+  <%= f.input :size, collection: Dress.SIZE %>
   <%= f.input :color%>
-  <%= f.input :category, :collection => ['casual', 'formal', 'cocktail', 'maxi', 'sundress', 'evening', 'party', 'summer'] %>
+  <%= f.input :category, collection: Dress.CATEGORY %>
   <%= f.input :price_per_day%>
   <%= f.button :submit %>
 <% end %>
