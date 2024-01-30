@@ -5,6 +5,9 @@ class DressesController < ApplicationController
     @user = current_user
   end
 
+  def show
+  end
+
   def new
     @dress = Dress.new
     @user = current_user
