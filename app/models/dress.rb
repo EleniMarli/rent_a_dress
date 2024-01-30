@@ -1,4 +1,7 @@
 class Dress < ApplicationRecord
+  CATEGORY = %w(casual formal cocktail maxi sundress evening party summer)
+  SIZE = %w(s m l xl xxl)
+  
   belongs_to :user
   has_many :bookings, dependent: :destroy
 
@@ -9,6 +12,6 @@ class Dress < ApplicationRecord
   validates :category, presence: true
   validates :price_per_day, presence: true, numericality: { greater_than: 0 }
 
-  validates_inclusion_of :category, in: %w(casual formal cocktail maxi sundress evening party summer)
-  validates_inclusion_of :size, in: %w(s m l xl xxl)
+  validates_inclusion_of :category, in: CATEGORY
+  validates_inclusion_of :size, in: SIZE
 end
