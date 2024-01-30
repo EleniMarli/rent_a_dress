@@ -4,8 +4,9 @@
 
 <ul>
 <% @dresses.each do |dress| %>
-  <h5>Title: <%= dress.title %> </h5>
-  <h5>Description: <%= dress.description %> </h5>
+  <li>
+    <h5>Title: <%= dress.title %> </h5>
+    <h5>Description: <%= dress.description %> </h5>
   </li>
 <%end%>
 </ul>
