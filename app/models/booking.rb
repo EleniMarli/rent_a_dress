@@ -8,13 +8,14 @@ class Booking < ApplicationRecord
 
   validate :valid_booking_dates
 
+  validates :status, inclusion: { in: [0, 1, 2] }
   enum status: { pending: 0, accepted: 1, declined: 2 }
 
   private
 
   def valid_booking_dates
     if start_date.present? && end_date.present?
-      errors.add(:end_date, "must be after start date") if end_date < start_date
+      errors.add(:end_date, "must be after start date") if end_date <= start_date
     end
   end
 end
