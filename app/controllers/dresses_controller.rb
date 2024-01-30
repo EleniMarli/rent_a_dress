@@ -1,5 +1,7 @@
 class DressesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
+  before_action :set_dress, only: %i[edit update]
+
   def index
     @dresses = Dress.all
     @user = current_user
@@ -21,7 +23,22 @@ class DressesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @dress.update(dress_params)
+      redirect_to dress_path(@dress), notice: 'Dress was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
   private
+
+  def set_dress
+    @dress = Dress.find(params[:id])
+  end
 
   def dress_params
     params.require(:dress).permit(:title, :description, :size, :color, :category, :price_per_day)

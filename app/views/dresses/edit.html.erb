@@ -1,0 +1,10 @@
+<h3>Edit a dress</h3>
+<%= simple_form_for @dress do |f| %>
+  <%= f.input :title%>
+  <%= f.input :description%>
+  <%= f.input :size, collection: Dress.SIZE %>
+  <%= f.input :color%>
+  <%= f.input :category, collection: Dress.CATEGORY %>
+  <%= f.input :price_per_day%>
+  <%= f.button :submit, 'Update Dress' %>
+<% end %>
