@@ -1,0 +1,17 @@
+<h3><%= @user.name %>'s profile</h3>
+
+<h4>Dresses I offer:</h4>
+
+<ul>
+<% @dresses.each do |dress| %>
+  <h5>Title: <%= dress.title %> </h5>
+  <h5>Description: <%= dress.description %> </h5>
+  </li>
+<%end%>
+</ul>
+
+<%= link_to 'Add a dress', new_dress_path %>
+
+<h4>Requests from other users:</h4>
+
+<h4>Bookings I have made:</h4>
