@@ -14,10 +14,11 @@ class DressesController < ApplicationController
     @dress = Dress.new(dress_params)
     @user = current_user
     @dress.user = @user
+
     if @dress.save
       redirect_to user_path(@user)
     else
-      render 'new'
+      render 'new', status: :unprocessable_entity
     end
   end
 
