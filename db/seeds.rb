@@ -8,13 +8,18 @@ require "open-uri"
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-user_1 = User.create(
+Booking.destroy_all
+Dress.destroy_all
+User.destroy_all
+
+
+user_1 = User.create!(
   name: 'Rosy',
   email: 'rosy@email.com',
   password: '123456'
 )
 
-user_2 = User.create(
+user_2 = User.create!(
   name: 'Lilly',
   email: 'lilly@email.com',
   password: '123456'
@@ -101,6 +106,22 @@ dress_5 = Dress.new(
   category: 'party',
   price_per_day: 35.00
 )
-
 dress_5.photo.attach(io: file_5, filename: "dress_5.png", content_type: "image/png")
 dress_5.save
+
+# Bookings
+booking_1 = Booking.create!(
+  user: user_1,
+  dress: dress_2,
+  start_date: Date.today + 1,
+  end_date: Date.today + 3,
+  status: 0
+)
+
+booking_2 = Booking.create!(
+  user: user_2,
+  dress: dress_1,
+  start_date: Date.today + 5,
+  end_date: Date.today + 6,
+  status: 0
+)
