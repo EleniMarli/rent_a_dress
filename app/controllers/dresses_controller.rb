@@ -9,6 +9,7 @@ class DressesController < ApplicationController
 
   def show
     @dress = Dress.find(params[:id])
+    @review = Review.new(dress: @dress)
   end
 
   def new
@@ -30,7 +31,7 @@ class DressesController < ApplicationController
 
   def edit
     @dress = Dress.find(params[:id])
-    
+
   end
 
   def update
