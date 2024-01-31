@@ -6,6 +6,7 @@ class DressesController < ApplicationController
   end
 
   def show
+    @dress = Dress.find(params[:id])
   end
 
   def new
