@@ -11,6 +11,22 @@
   </head>
 
   <body>
+    <div class="navbar navbar-expand justify-content-end bg-white">
+      <% if current_user == nil %>
+        <a class='pe-3' href="<%=  new_user_registration_path %>">Sign up</a>
+        <a class='pe-3' href="<%= new_user_session_path %>">Log in</a>
+      <% else %>
+        <a class='pe-3' href="<%= user_path(current_user) %>">My profile</a>
+        <a href="/">Browse dresses</a>
+        <%= button_to(
+        "Log Out",
+        destroy_user_session_path,
+        method: :delete,
+        class: "btn btn-link"
+        ) %>
+      <%end%>
+    </div>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
