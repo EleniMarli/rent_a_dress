@@ -13,6 +13,32 @@
 
 <%= link_to 'Add a dress', new_dress_path %>
 
-<h4>Requests from other users:</h4>
+<h4>Booking requests from other users:</h4>
+<%if @booking_requests%>
+  <ul>
+  <% @booking_requests.each do |booking_request| %>
+    <li>
+      <h5>Title: <%= booking_request.dress.title %> </h5>
+      <h5>From: <%= booking_request.start_date %> </h5>
+      <h5>Until: <%= booking_request.end_date %> </h5>
+      <h5>Total price: <%= (booking_request.dress.price_per_day * (booking_request.end_date - booking_request.start_date)) %> €</h5>
+      <h5>Status: <%= booking_request.status %></h5>
+    </li>
+  <%end%>
+  </ul>
+<%end%>
 
 <h4>Bookings I have made:</h4>
+<%if @bookings%>
+  <ul>
+  <% @bookings.each do |booking| %>
+    <li>
+      <h5>Title: <%= booking.dress.title %> </h5>
+      <h5>From: <%= booking.start_date %> </h5>
+      <h5>Until: <%= booking.end_date %> </h5>
+      <h5>Total cost: <%= (booking.dress.price_per_day * (booking.end_date - booking.start_date)) %> €</h5>
+      <h5>Status: <%= booking.status %></h5>
+    </li>
+  <%end%>
+  </ul>
+<%end%>
