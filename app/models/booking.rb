@@ -8,7 +8,7 @@ class Booking < ApplicationRecord
 
   validate :valid_booking_dates
 
-  validates :status, inclusion: { in: [0, 1, 2] }
+  # validates :status, inclusion: { in: [0, 1, 2] }
   enum status: { pending: 0, accepted: 1, declined: 2 }
 
   private
