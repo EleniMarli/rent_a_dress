@@ -2,6 +2,7 @@
 
 <h4>Dresses I offer:</h4>
 
+<!--
 <ul>
 <% @dresses.each do |dress| %>
   <li>
@@ -10,6 +11,23 @@
   </li>
 <%end%>
 </ul>
+-->
+
+<div class="cards">
+  <% @dresses.each do |dress| %>
+    <div class="card-trip">
+      <%= cl_image_tag dress.photo.key, height: 300, width: 400, crop: :fill %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= dress.title %></h2>
+          <p>"<%= dress.description %>"</p>
+        </div>
+        <p class="card-trip-pricing"><%= dress.price_per_day %> €/day</p>
+      </div>
+      <%= link_to 'Show me more', dress_path(dress) %>
+    </div>
+  <%end%>
+</div>
 
 <%= link_to 'Add a dress', new_dress_path %>
 
