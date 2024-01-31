@@ -6,5 +6,6 @@
   <%= f.input :color%>
   <%= f.input :category, collection: Dress::CATEGORY %>
   <%= f.input :price_per_day%>
+  <%= f.input :photo, as: :file %>
   <%= f.button :submit %>
 <% end %>
