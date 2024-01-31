@@ -26,7 +26,6 @@ class DressesController < ApplicationController
 
   def edit
     @dress = Dress.find(params[:id])
-
   end
 
   def update
@@ -36,6 +35,11 @@ class DressesController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @dress = Dress.find(params[:id])
+
   end
 
   private
