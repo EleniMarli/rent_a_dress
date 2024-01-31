@@ -2,29 +2,17 @@
 
 <h4>Dresses I offer:</h4>
 
-<!--
-<ul>
-<% @dresses.each do |dress| %>
-  <li>
-    <h5>Title: <%= dress.title %> </h5>
-    <h5>Description: <%= dress.description %> </h5>
-  </li>
-<%end%>
-</ul>
--->
-
 <div class="cards">
   <% @dresses.each do |dress| %>
     <div class="card-trip">
       <%= cl_image_tag dress.photo.key, height: 300, width: 400, crop: :fill %>
       <div class="card-trip-infos">
         <div>
-          <h2><%= dress.title %></h2>
+          <h2><%= link_to dress.title, dress_path(dress) %></h2>
           <p>"<%= dress.description %>"</p>
         </div>
         <p class="card-trip-pricing"><%= dress.price_per_day %> €/day</p>
       </div>
-      <%= link_to 'Show me more', dress_path(dress) %>
     </div>
   <%end%>
 </div>
