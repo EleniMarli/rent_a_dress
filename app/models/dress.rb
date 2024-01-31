@@ -1,7 +1,9 @@
 class Dress < ApplicationRecord
   CATEGORY = %w(casual formal cocktail maxi sundress evening party summer)
   SIZE = %w(s m l xl xxl)
-  
+
+  has_one_attached :photo
+
   belongs_to :user
   has_many :bookings, dependent: :destroy
 
