@@ -24,6 +24,7 @@ class DressesController < ApplicationController
   end
 
   def edit
+    @dress = Dress.find(params[:id])
   end
 
   def update
