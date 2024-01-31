@@ -29,10 +29,11 @@ class DressesController < ApplicationController
   end
 
   def update
+    @dress = Dress.find(params[:id])
     if @dress.update(dress_params)
       redirect_to dress_path(@dress), notice: 'Dress was successfully updated.'
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
