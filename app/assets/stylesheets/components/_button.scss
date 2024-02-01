@@ -1,0 +1,13 @@
+.btn {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #7895B2;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #7895B2;
+  color: white;
+  filter: brightness(85%)
+}

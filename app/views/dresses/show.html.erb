@@ -10,6 +10,10 @@
   <%=link_to 'Book this dress', new_dress_booking_path(@dress)%>
 <%end%>
 <% if current_user == @dress.user %>
-  <%=link_to 'Update this dress', edit_dress_path(@dress)%>
-  <%=link_to 'Delete this dress', dress_path(@dress), data: {turbo_method: :delete, turbo_confirm: "Are you sure? This action can't be reversed!"} %>
+<div class="btn">
+  <%=link_to 'Update', edit_dress_path(@dress)%>
+</div>
+<div class="btn">
+  <%=link_to 'Delete', dress_path(@dress), data: {turbo_method: :delete, turbo_confirm: "Are you sure? This action can't be reversed!"} %>
+</div>
 <%end%>
