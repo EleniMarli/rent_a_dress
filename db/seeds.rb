@@ -30,7 +30,7 @@ user_2 = User.create!(
 file_1 = URI.open("https://images.unsplash.com/flagged/photo-1585052201332-b8c0ce30972f?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 
 dress_1 = Dress.new(
-  title: 'Summer Breeze Maxi Dress',
+  title: 'Summer Maxi Dress',
   description: 'A flowy maxi dress perfect for a summer day.',
   size: 'm',
   user: user_1,
@@ -47,7 +47,7 @@ dress_1.save
 file_2 = URI.open("https://images.unsplash.com/photo-1599662875272-64de8289f6d8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 
 dress_2 = Dress.new(
-  title: 'Classic Black Cocktail Dress',
+  title: 'Black Cocktail Dress',
   description: 'A timeless black cocktail dress for any formal occasion.',
   size: 's',
   user: user_2,
@@ -98,7 +98,7 @@ dress_4.save
 file_5 = URI.open("https://images.unsplash.com/photo-1613966570650-add3cf83aa83?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 
 dress_5 = Dress.new(
-  title: 'Chic Summer Party Dress',
+  title: 'Summer Party Dress',
   description: 'A chic and stylish party dress perfect for summer celebrations.',
   size: 'm',
   user: user_1,
