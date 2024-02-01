@@ -1,5 +1,3 @@
-<h3><%= @user.name %>'s profile</h3>
-
 
 <div class='background-profile-first'>
   <h4 class="">MY DRESSES</h4>
@@ -9,8 +7,8 @@
         <%= cl_image_tag dress.photo.key %>
         <div class="card-trip-infos">
           <h2><%= link_to dress.title, dress_path(dress) %></h2>
-          <p><%= sprintf("%.2f", dress.price_per_day) %> € per day</p>
 
+            <p><%= sprintf("%.2f", dress.price_per_day) %> € per day | <%= dress.size %> | <%= dress.category %></p>
 
 
         </div>
