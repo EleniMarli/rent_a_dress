@@ -1,13 +1,29 @@
-.btn {
+.btn-test {
   color: white;
-  padding: 8px 24px;
+  font-size: 15px;
+  padding: 8px 16px;
   border-radius: 4px;
-  background: #7895B2;
+  background: #AEBDCA;
   transition: background 0.3s ease;
+  width: 100px;
+  border: none;
+  margin-top: 8px;
+  margin-left: 24px;
+  text-decoration: none;
 }
 
-.btn:hover {
-  background: #7895B2;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+.btn-test:hover {
+  background: #AEBDCA;
   color: white;
-  filter: brightness(85%)
+  filter: brightness(95%)
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
 }
