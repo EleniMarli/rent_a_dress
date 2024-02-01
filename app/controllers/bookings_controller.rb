@@ -14,8 +14,20 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to user_path(@user)
     else
-      render 'new'
+      render 'new', status: :unprocessable_entity
     end
+  end
+
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.accepted!
+    redirect_to user_path(@booking.dress.user)
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.declined!
+    redirect_to user_path(@booking.dress.user)
   end
 
   private
