@@ -7,13 +7,21 @@
         <p><b>Description:</b> <%= @dress.description %> </p>
         <p><b>Size:</b> <%= @dress.size %>  |  <b>Color:</b> <%= @dress.color %>  |  <b>Category:</b> <%= @dress.category %> </p>
         <p><b>Price:</b> <%= sprintf("%.2f", @dress.price_per_day) %> € per day  |  <b>Owner:</b> <%= @dress.user.name %></p>
+    </div>
 
+    <div class="btn-container">
     <% if current_user != @dress.user %>
-      <%=link_to 'Book this dress', new_dress_booking_path(@dress)%>
+      <button class="btn-test">
+        <%=link_to 'Book', new_dress_booking_path(@dress)%> <i class="fa-regular fa-calendar"></i>
+      </button>
     <%end%>
     <% if current_user == @dress.user %>
-      <%=link_to 'Update this dress', edit_dress_path(@dress)%>
-      <%=link_to 'Delete this dress', dress_path(@dress), data: {turbo_method: :delete, turbo_confirm: "Are you sure? This action can't be reversed!"} %>
+      <button class="btn-test">
+        <%=link_to 'Update', edit_dress_path(@dress)%> <i class="fa-regular fa-pen-to-square"></i>
+      </button>
+      <button class="btn-test">
+        <%=link_to 'Delete', dress_path(@dress), data: {turbo_method: :delete, turbo_confirm: "Are you sure? This action can't be reversed!"} %> <i class="fa-solid fa-trash"></i>
+      </button>
     <%end%>
-  </div>
+    </div>
 </div>
