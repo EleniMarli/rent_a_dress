@@ -1,11 +1,18 @@
-<h3>Details of <%=@dress.title%> dress</h3>
+<h3>Details of <%=@dress.title%></h3>
 
-  <h5>Description: <%= @dress.description %> </h5>
-  <h5>Size: <%= @dress.size %> </h5>
-  <h5>Color: <%= @dress.color %> </h5>
-  <h5>Category: <%= @dress.category %> </h5>
-  <h5>Price: <%= @dress.price_per_day %> /€</h5>
-  <h5>Owner: <%= @dress.user.name %> </h5>
+<div class="cards">
+  <div class="card-trip">
+    <%= cl_image_tag @dress.photo.key, height: 300, width: 400, crop: :fill %>
+    <div class="card-trip-infos">
+      <div>
+        <p>Description: <%= @dress.description %> </p>
+        <p>Size: <%= @dress.size %> </p>
+        <p>Color: <%= @dress.color %> </p>
+        <p>Category: <%= @dress.category %> </p>
+        <p>Price: <%= @dress.price_per_day %> €</p>
+        <p>Owner: <%= @dress.user.name %> </p>
+      </div>
+    </div>
 <% if current_user != @dress.user %>
   <%=link_to 'Book this dress', new_dress_booking_path(@dress)%>
 <%end%>
@@ -13,3 +20,4 @@
   <%=link_to 'Update this dress', edit_dress_path(@dress)%>
   <%=link_to 'Delete this dress', dress_path(@dress), data: {turbo_method: :delete, turbo_confirm: "Are you sure? This action can't be reversed!"} %>
 <%end%>
+</div>
