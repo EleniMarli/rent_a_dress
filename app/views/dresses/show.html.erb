@@ -1,15 +1,19 @@
-<h3>Details of <%=@dress.title%> dress</h3>
 
-  <h5>Description: <%= @dress.description %> </h5>
-  <h5>Size: <%= @dress.size %> </h5>
-  <h5>Color: <%= @dress.color %> </h5>
-  <h5>Category: <%= @dress.category %> </h5>
-  <h5>Price: <%= @dress.price_per_day %> /€</h5>
-  <h5>Owner: <%= @dress.user.name %> </h5>
-<% if current_user != @dress.user %>
-  <%=link_to 'Book this dress', new_dress_booking_path(@dress)%>
-<%end%>
-<% if current_user == @dress.user %>
-  <%=link_to 'Update this dress', edit_dress_path(@dress)%>
-  <%=link_to 'Delete this dress', dress_path(@dress), data: {turbo_method: :delete, turbo_confirm: "Are you sure? This action can't be reversed!"} %>
-<%end%>
+<div class='background-profile-first'>
+
+  <div class="details-card">
+    <%= cl_image_tag @dress.photo.key %>
+    <div class="details-infos">
+        <p><b>Description:</b> <%= @dress.description %> </p>
+        <p><b>Size:</b> <%= @dress.size %>  |  <b>Color:</b> <%= @dress.color %>  |  <b>Category:</b> <%= @dress.category %> </p>
+        <p><b>Price:</b> <%= sprintf("%.2f", @dress.price_per_day) %> € per day  |  <b>Owner:</b> <%= @dress.user.name %></p>
+
+    <% if current_user != @dress.user %>
+      <%=link_to 'Book this dress', new_dress_booking_path(@dress)%>
+    <%end%>
+    <% if current_user == @dress.user %>
+      <%=link_to 'Update this dress', edit_dress_path(@dress)%>
+      <%=link_to 'Delete this dress', dress_path(@dress), data: {turbo_method: :delete, turbo_confirm: "Are you sure? This action can't be reversed!"} %>
+    <%end%>
+  </div>
+</div>
