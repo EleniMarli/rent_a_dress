@@ -1,6 +1,6 @@
 class DressesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  before_action :set_dress, only: %i[edit update]
+  before_action :set_dress, only: %i[edit update destroy]
 
   def index
     @dresses = Dress.all
@@ -31,7 +31,6 @@ class DressesController < ApplicationController
 
   def edit
     @dress = Dress.find(params[:id])
-
   end
 
   def update
@@ -41,6 +40,16 @@ class DressesController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @dress = Dress.find(params[:id])
+  end
+
+  def destroy
+    @dress = Dress.find(params[:id])
+    @dress.destroy
+    redirect_to user_path(current_user)
   end
 
   private

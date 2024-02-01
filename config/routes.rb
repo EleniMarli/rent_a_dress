@@ -11,9 +11,17 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root to: "dresses#index"
-  resources :dresses, only: %i[new create edit update show] do
+  resources :dresses, only: %i[new create edit update show destroy] do
     resources :bookings, only: %i[new create]
     resources :reviews, only: %i[create]
   end
   resources :users, only: :show
+  # patch 'bookings/:id/decline', to: 'bookings#decline', as: :decline
+  # patch 'bookings/:id/accept', to: 'bookings#accept', as: :accept
+  resources :bookings do
+    member do
+      patch 'accept'
+      patch 'decline'
+    end
+  end
 end

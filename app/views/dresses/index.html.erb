@@ -1,22 +1,8 @@
 <h3>All available dresses</h3>
 
-<!-- <ul>
-<% @dresses.each do |dress| %>
-  <% if @user != dress.user %>
-    <li>
-    <h5>Title: <%= dress.title %> </h5>
-    <h5>Size: <%= dress.size %> </h5>
-    <h5>Price: <%= dress.price_per_day %> €/day</h5>
-    <h5>Owner: <%= dress.user.name%> </h5>
-    <%= link_to 'Show me more', dress_path(dress) %>
-    </li>
-  <%end%>
-<%end%>
-</ul>
--->
-
 <div class="cards">
   <% @dresses.each do |dress| %>
+    <% if @user != dress.user %>
       <div class="card-trip">
         <%= cl_image_tag dress.photo.key, height: 300, width: 400, crop: :fill %>
         <div class="card-trip-infos">
@@ -28,6 +14,7 @@
           </div>
           <p class="card-trip-pricing"><%= dress.price_per_day %> €/day</p>
         </div>
-    </div>
+      </div>
+    <%end%>
   <%end%>
 </div>
