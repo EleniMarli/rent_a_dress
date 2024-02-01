@@ -1,17 +1,16 @@
-
 <div class='background-profile-first'>
   <h4 class="">MY DRESSES</h4>
   <div class="cards">
-    <% @dresses.each do |dress| %>
-      <div>
-        <%= link_to dress_path(dress) do %>
-          <div class="profile-card">
-              <%= cl_image_tag dress.photo.key %>
-              <div class="card-trip-infos">
-                <h2><%= link_to dress.title, dress_path(dress) %></h2>
-                <p><%= sprintf("%.2f", dress.price_per_day) %> € per day | <%= dress.size %> | <%= dress.category %></p>
+    <%if @dresses%>
+      <div class="row justify">
+        <% @dresses.each do |dress| %>
+              <div class="profile-card">
+                <%= cl_image_tag dress.photo.key %>
+                <div class="card-trip-infos">
+                  <h2><%= link_to dress.title, dress_path(dress) %></h2>
+                  <p class="top-cards"><%= sprintf("%.2f", dress.price_per_day) %> € per day | <%= dress.size %> | <%= dress.category %></p>
+                </div>
               </div>
-          </div>
         <%end%>
       </div>
     <%end%>
@@ -19,6 +18,41 @@
 </div>
 
 <%= link_to 'Add a dress', new_dress_path %>
+
+<div class='background-profile-second'>
+  <h4>MY BOOKINGS</h4>
+  <div class="cards">
+    <%if @bookings%>
+      <div class="row justify">
+        <% @bookings.each do |booking| %>
+            <div class="profile-card">
+              <%= cl_image_tag booking.dress.photo.key %>
+              <div class="card-trip-infos">
+                <h2><%= link_to booking.dress.title, dress_path(booking.dress) %></h2>
+
+                <p class="d-flex justify-content-between">
+                  <span class="opacity">From: <%= booking.start_date.strftime("%d-%m-%Y") %></span>
+                  <span class="opacity">Until: <%= booking.end_date.strftime("%d-%m-%Y") %></span>
+                </p>
+
+                <p class="d-flex justify-content-between">
+                  <span class="opacity">Total cost: <%= sprintf("%.2f", booking.dress.price_per_day * (booking.end_date - booking.start_date)) %> €</span>
+                  <%if booking.accepted?%>
+                    <span class="green"><%= booking.status %></span>
+                  <%elsif booking.declined?%>
+                    <span class="red"><%= booking.status %></span>
+                  <%else%>
+                    <span class="opacity"><%= booking.status %></span>
+                  <%end%>
+                </p>
+              </div>
+            </div>
+        <%end%>
+      </div>
+    <%end%>
+  </div>
+</div>
+
 
 <h4>Booking requests from other users:</h4>
 <%if @booking_requests%>
@@ -34,21 +68,6 @@
         <%= link_to '✔️', accept_booking_path(booking_request), data: {turbo_method: :patch, turbo_confirm: "Are you sure? This action can't be reversed!"} %>
         <%= link_to '❌', decline_booking_path(booking_request), data: {turbo_method: :patch, turbo_confirm: "Are you sure? This action can't be reversed!"} %>
       <%end%>
-    </li>
-  <%end%>
-  </ul>
-<%end%>
-
-<h4>Bookings I have made:</h4>
-<%if @bookings%>
-  <ul>
-  <% @bookings.each do |booking| %>
-    <li>
-      <h5>Title: <%= booking.dress.title %> </h5>
-      <h5>From: <%= booking.start_date %> </h5>
-      <h5>Until: <%= booking.end_date %> </h5>
-      <h5>Total cost: <%= (booking.dress.price_per_day * (booking.end_date - booking.start_date)) %> €</h5>
-      <h5>Status: <%= booking.status %></h5>
     </li>
   <%end%>
   </ul>

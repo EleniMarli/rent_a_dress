@@ -3,6 +3,22 @@
   background-color: #F5EFE6;
   margin-left: 10%;
   margin-right: 10%;
+  margin-top: 5%;
+  padding-top: 2%;
+  padding-bottom: 5%;
+
+  h4 {
+    text-align: center;
+    margin-bottom:2.3%;
+  }
+}
+
+.background-profile-second {
+  border-radius: 5px;
+  background-color: #AEBDCA;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
   padding-top: 2%;
   padding-bottom: 5%;
 
@@ -14,16 +30,20 @@
 
 .cards {
   font-family: Funkis;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: flex;
+  //grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: center;
-  grid-gap: 16px;
-  margin-left: 15%;
-  margin-right: 15%;
+  // grid-gap: 16px;
+  // margin-left: 15%;
+  // margin-right: 15%;
+}
+
+.justify {
+  justify-content: space-between;
 }
 
 // Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
+/* @media (min-width: 100px) and (max-width: 575px) {
   .cards {
     grid-template-columns: 1fr;
   }
@@ -48,7 +68,7 @@
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
-}
+} */
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {

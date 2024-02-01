@@ -4,7 +4,13 @@
   box-shadow: 0 0 7px rgba(0,0,0,0.2);
   border-radius: 5px;
   width: 240px;
+  margin: 0 11px;
   height: 450px;
+  padding:0;
+
+  .top-cards {
+    opacity: .4;
+  }
 
   img {
     height: 80%;
@@ -21,9 +27,22 @@
   p {
     font-family: "Ubuntu", "Helvetica", "sans-serif";
     font-size: 13px;
-    opacity: .4;
+
     margin-top: 2px;
     margin-bottom:2px;
+
+
+    .opacity {
+      opacity: .4;
+    }
+    .red {
+      color: rgb(185, 13, 13);
+    }
+
+    .green {
+      color: rgb(12, 167, 51);
+      opacity: 100 !important;
+    }
   }
 
   .card-trip-infos {
@@ -38,7 +57,6 @@
       font-size: 20px;
 
       &:hover {
-
         opacity: .4;
       }
     }
