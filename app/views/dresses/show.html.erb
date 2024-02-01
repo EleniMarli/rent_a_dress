@@ -9,7 +9,9 @@
         <p><b>Price:</b> <%= sprintf("%.2f", @dress.price_per_day) %> € per day  |  <b>Owner:</b> <%= @dress.user.name %></p>
 
     <% if current_user != @dress.user %>
+    <div class="btn">
       <%=link_to 'Book this dress', new_dress_booking_path(@dress)%>
+    </div>
     <%end%>
     <% if current_user == @dress.user %>
       <%=link_to 'Update this dress', edit_dress_path(@dress)%>
