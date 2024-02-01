@@ -1,10 +1,19 @@
+<div class="banner">
+  <div class="container">
+    <h1> <strong>Rent A Dress</strong></h1>
+    <p>It's Time to Party!</p>
+  </div>
+</div>
+
 <h3>All available dresses</h3>
 
 <div class="cards">
   <% @dresses.each do |dress| %>
     <% if @user != dress.user %>
       <div class="profile-card">
+      <% if dress.photo.attached? %>
         <%= cl_image_tag dress.photo.key%>
+      <% end %>
         <div class="card-trip-infos">
           <div>
             <h2><%= link_to dress.title, dress_path(dress) %></h2>
