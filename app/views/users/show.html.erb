@@ -1,20 +1,22 @@
 <h3><%= @user.name %>'s profile</h3>
 
-<h4>Dresses I offer:</h4>
 
-<div class="cards">
-  <% @dresses.each do |dress| %>
-    <div class="card-trip">
-      <%= cl_image_tag dress.photo.key, height: 300, width: 400, crop: :fill %>
-      <div class="card-trip-infos">
-        <div>
+<div class='background-profile-first'>
+  <h4 class="">MY DRESSES</h4>
+  <div class="cards">
+    <% @dresses.each do |dress| %>
+      <div class="profile-card">
+        <%= cl_image_tag dress.photo.key %>
+        <div class="card-trip-infos">
           <h2><%= link_to dress.title, dress_path(dress) %></h2>
-          <p>"<%= dress.description %>"</p>
+          <p><%= sprintf("%.2f", dress.price_per_day) %> € per day</p>
+
+
+
         </div>
-        <p class="card-trip-pricing"><%= dress.price_per_day %> €/day</p>
       </div>
-    </div>
-  <%end%>
+    <%end%>
+  </div>
 </div>
 
 <%= link_to 'Add a dress', new_dress_path %>
