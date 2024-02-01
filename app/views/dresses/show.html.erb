@@ -5,8 +5,8 @@
     <%= cl_image_tag @dress.photo.key %>
     <div class="details-infos">
         <p><b>Description:</b> <%= @dress.description %> </p>
-        <p><b>Size:</b> <%= @dress.size %> | <b>Color:</b> <%= @dress.color %> | <b>Category:</b> <%= @dress.category %> </p>
-        <p><b>Price:</b> <%= @dress.price_per_day %> € per day | <b>Owner:</b> <%= @dress.user.name %></p>
+        <p><b>Size:</b> <%= @dress.size %>  |  <b>Color:</b> <%= @dress.color %>  |  <b>Category:</b> <%= @dress.category %> </p>
+        <p><b>Price:</b> <%= sprintf("%.2f", @dress.price_per_day) %> € per day  |  <b>Owner:</b> <%= @dress.user.name %></p>
 
     <% if current_user != @dress.user %>
       <%=link_to 'Book this dress', new_dress_booking_path(@dress)%>
