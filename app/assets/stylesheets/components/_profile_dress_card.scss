@@ -19,8 +19,9 @@
   }
 
   p {
+    font-family: "Ubuntu", "Helvetica", "sans-serif";
     font-size: 13px;
-    opacity: .7;
+    opacity: .4;
     margin-top: 2px;
     margin-bottom:2px;
   }
@@ -37,7 +38,8 @@
       font-size: 20px;
 
       &:hover {
-        color: rgb(101, 101, 101);
+
+        opacity: .4;
       }
     }
   }
