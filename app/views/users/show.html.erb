@@ -3,15 +3,16 @@
   <h4 class="">MY DRESSES</h4>
   <div class="cards">
     <% @dresses.each do |dress| %>
-      <div class="profile-card">
-        <%= cl_image_tag dress.photo.key %>
-        <div class="card-trip-infos">
-          <h2><%= link_to dress.title, dress_path(dress) %></h2>
-
-            <p><%= sprintf("%.2f", dress.price_per_day) %> € per day | <%= dress.size %> | <%= dress.category %></p>
-
-
-        </div>
+      <div>
+        <%= link_to dress_path(dress) do %>
+          <div class="profile-card">
+              <%= cl_image_tag dress.photo.key %>
+              <div class="card-trip-infos">
+                <h2><%= link_to dress.title, dress_path(dress) %></h2>
+                <p><%= sprintf("%.2f", dress.price_per_day) %> € per day | <%= dress.size %> | <%= dress.category %></p>
+              </div>
+          </div>
+        <%end%>
       </div>
     <%end%>
   </div>
