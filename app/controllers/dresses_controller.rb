@@ -7,6 +7,11 @@ class DressesController < ApplicationController
     @user = current_user
   end
 
+  def show
+    @dress = Dress.find(params[:id])
+    @review = Review.new(dress: @dress)
+  end
+
   def new
     @dress = Dress.new
     @user = current_user

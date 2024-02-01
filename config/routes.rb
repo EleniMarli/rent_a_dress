@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   root to: "dresses#index"
   resources :dresses, only: %i[new create edit update show destroy] do
     resources :bookings, only: %i[new create]
+    resources :reviews, only: %i[create]
   end
   resources :users, only: :show
   # patch 'bookings/:id/decline', to: 'bookings#decline', as: :decline
