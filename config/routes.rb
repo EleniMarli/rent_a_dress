@@ -15,4 +15,12 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create]
   end
   resources :users, only: :show
+  # patch 'bookings/:id/decline', to: 'bookings#decline', as: :decline
+  # patch 'bookings/:id/accept', to: 'bookings#accept', as: :accept
+  resources :bookings do
+    member do
+      patch 'accept'
+      patch 'decline'
+    end
+  end
 end
