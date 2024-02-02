@@ -8,7 +8,9 @@
   <%= f.input :color%>
   <%= f.input :category, collection: Dress::CATEGORY %>
   <%= f.input :price_per_day%>
-  <%= f.button :submit, class: "btn-test", value: "Confirm" %>
+  <%= f.button :button, class: "btn-test", value: "" do %>
+    Confirm <i class="fa-solid fa-check"></i>
+    <% end %>
 <% end %>
 
 </div>

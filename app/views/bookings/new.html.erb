@@ -11,7 +11,9 @@
             label: "Until",
             as: :string,
             input_html: { data: { controller: "datepicker" } } %>
-  <%= f.button :submit, class: "btn-test", value: "Confirm" %>
+  <%= f.button :button, class: "btn-test", value: "" do %>
+    Confirm <i class="fa-solid fa-check"></i>
+    <% end %>
 <% end %>
 </div>
 </div>
