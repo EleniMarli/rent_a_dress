@@ -12,11 +12,8 @@ Booking.destroy_all
 Dress.destroy_all
 User.destroy_all
 
-<<<<<<< HEAD
 # 3 Users
 
-=======
->>>>>>> master
 user_1 = User.create!(
   name: 'Rosy',
   email: 'rosy@email.com',
@@ -57,13 +54,8 @@ dress_1.save
 file_2 = URI.open("https://images.unsplash.com/photo-1533659828870-95ee305cee3e?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 
 dress_2 = Dress.new(
-<<<<<<< HEAD
   title: 'Grey Flowy Dress',
   description: 'A timeless black cocktail dress for any formal occasion.',
-=======
-  title: 'Grey Dress',
-  description: 'A timeless gray cocktail dress for any formal occasion.',
->>>>>>> master
   size: 's',
   user: user_1,
   color: 'black',
