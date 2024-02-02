@@ -126,7 +126,7 @@
                 </div>
               <%end%>
               <%if booking_request.accepted? %>
-                <div class="accept-decline d-flex flex-column">
+                <div class="accept-decline d-flex flex-column pe-3">
                   <%= link_to decline_booking_path(booking_request),class: "btn-small", data: {turbo_method: :patch, turbo_confirm: "Are you sure? There will be a penalty fee!"} do %>
                   Decline
                   <i class="fa-solid fa-xmark"></i>
