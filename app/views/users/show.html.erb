@@ -60,7 +60,7 @@
               <% if booking.accepted? %>
                 <div class="cancel">
                   <button class="btn-small">
-                    <%= link_to booking_path(booking), class: "btn-small", data: {turbo_method: :delete, turbo_confirm: "Are you sure? There will be a penalty fee!"} do %>
+                    <%= link_to booking_path(booking), class: "btn-small p-0 m-0", data: {turbo_method: :delete, turbo_confirm: "Are you sure? There will be a penalty fee!"} do %>
                       Cancel
                       <i class="fa-solid fa-xmark"></i>
                     <%end%>
