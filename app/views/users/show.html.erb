@@ -6,7 +6,7 @@
       <div class="row row-cols-4 justify ">
 
          <% @dresses.each do |dress| %>
-            <div class="col col-centered ">
+            <div class="space col col-centered ">
             <div class="profile-card">
               <%= cl_image_tag dress.photo.key %>
               <div class="card-trip-infos">
@@ -20,7 +20,7 @@
     <%end%>
   </div>
   <div class="add">
-  <button class="btn-test">
+  <button class="btn-test extra">
     <%= link_to 'Add dress', new_dress_path %> <i class="fa-solid fa-plus"></i>
   </button>
   </div>
@@ -34,7 +34,7 @@
 
         <div class="row row-cols-4 justify">
           <% @bookings.each do |booking| %>
-            <div class="col col-centered ">
+            <div class="space col col-centered ">
                 <div class="profile-card">
                   <%= cl_image_tag booking.dress.photo.key %>
                   <div class="card-trip-infos">
@@ -58,21 +58,26 @@
                 </p>
               </div>
               <% if booking.accepted? %>
-              <div class="cancel">
-                <%= link_to booking_path(booking), class: "btn-small", data: {turbo_method: :delete, turbo_confirm: "Are you sure? There will be a penalty fee!"} do %>
-                Cancel
-                <i class="fa-solid fa-xmark"></i>
-                <%end%>
-              </div>
+                <div class="cancel">
+                  <button class="btn-small">
+                    <%= link_to booking_path(booking), class: "btn-small", data: {turbo_method: :delete, turbo_confirm: "Are you sure? There will be a penalty fee!"} do %>
+                      Cancel
+                      <i class="fa-solid fa-xmark"></i>
+                    <%end%>
+                  </button>
+                </div>
               <%end%>
-
-
-                  <% if booking.pending? %>
-                    <div class="cancel">
-                      <%= link_to 'Cancel', booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure? There will not be a penalty fee."} %>
-                    </div>
-                  <%end%>
-              </div>
+              <% if booking.pending? %>
+                <div class="cancel">
+                  <button class="btn-small">
+                    <%= link_to booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure? There will not be a penalty fee."} do %>
+                      Cancel
+                      <i class="fa-solid fa-xmark"></i>
+                    <%end%>
+                  </button>
+                </div>
+              <%end%>
+            </div>
             </div>
 
           <%end%>
