@@ -11,7 +11,7 @@
     <div class="row row-cols-4 justify">
     <% @dresses.each do |dress| %>
       <% if @user != dress.user %>
-      <div class="col ">
+      <div class="col col-centered ">
         <div class="profile-card">
         <% if dress.photo.attached? %>
           <%= cl_image_tag dress.photo.key%>
