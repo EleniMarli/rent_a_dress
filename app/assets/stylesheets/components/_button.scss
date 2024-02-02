@@ -17,7 +17,23 @@
   }
 }
 
+.btn-small {
+  color: white;
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  background: #7895B2;
+  transition: background 0.3s ease;
+  width: 50px;
+  border: none;
+  text-decoration: none;
 
+  a {
+    text-decoration: none;
+    color: white!important;
+  }
+
+}
 
 .btn-test:hover {
   background: #7895B2;
@@ -47,4 +63,8 @@
 a {
   text-decoration: none;
   color: white;
+}
+
+.extra {
+ margin-top: 20px;
 }
