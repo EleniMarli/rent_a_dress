@@ -9,6 +9,19 @@
   align-items: center;
   margin-left: 24%;
   margin-right: 24%;
+  position: relative;
+  margin-bottom:22px;
+
+  .accept-decline {
+
+    left: 80%;
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-family: "Ubuntu", "Helvetica", sans-serif;
+    }
+  }
 }
 
 .card-booking img {
