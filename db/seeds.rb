@@ -12,7 +12,6 @@ Booking.destroy_all
 Dress.destroy_all
 User.destroy_all
 
-
 user_1 = User.create!(
   name: 'Rosy',
   email: 'rosy@email.com',
@@ -30,7 +29,7 @@ user_2 = User.create!(
 file_1 = URI.open("https://images.unsplash.com/flagged/photo-1576572093163-83b5ad089423?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 
 dress_1 = Dress.new(
-  title: 'Summer Maxi Dress',
+  title: 'Summer Dress',
   description: 'A flowy maxi dress perfect for a summer day.',
   size: 'm',
   user: user_1,
@@ -47,7 +46,7 @@ dress_1.save
 file_2 = URI.open("https://images.unsplash.com/photo-1582110915002-ea6374a4da95?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 
 dress_2 = Dress.new(
-  title: 'Grey Flowy Dress',
+  title: 'Grey Dress',
   description: 'A timeless gray cocktail dress for any formal occasion.',
   size: 's',
   user: user_2,
@@ -81,7 +80,7 @@ dress_3.save
 file_4 = URI.open("https://images.unsplash.com/photo-1533659828870-95ee305cee3e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 
 dress_4 = Dress.new(
-  title: 'Elegant Evening Gown',
+  title: 'Elegant Gown',
   description: 'An elegant evening gown for special occasions.',
   size: 'm',
   user: user_2,
@@ -98,7 +97,7 @@ dress_4.save
 file_5 = URI.open("https://images.unsplash.com/photo-1613966570650-add3cf83aa83?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 
 dress_5 = Dress.new(
-  title: 'Summer Party Dress',
+  title: 'Party Dress',
   description: 'A chic and stylish party dress perfect for summer celebrations.',
   size: 'm',
   user: user_1,
