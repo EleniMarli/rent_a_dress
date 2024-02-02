@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     member do
       patch 'accept'
       patch 'decline'
+      delete 'destroy'
     end
   end
 end
