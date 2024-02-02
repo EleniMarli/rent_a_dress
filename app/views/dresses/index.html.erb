@@ -7,9 +7,11 @@
 
 
 <div class="background-beige">
-  <div class="cards">
+  <div class="container cards">
+    <div class="row row-cols-4 justify">
     <% @dresses.each do |dress| %>
       <% if @user != dress.user %>
+      <div class="col ">
         <div class="profile-card">
         <% if dress.photo.attached? %>
           <%= cl_image_tag dress.photo.key%>
@@ -17,14 +19,15 @@
           <div class="card-trip-infos">
             <div>
               <h2><%= link_to dress.title, dress_path(dress) %></h2>
-              <p>Size: <%= dress.size %></p>
-              <p>"<%= dress.description %>"</p>
-              <p>Owner: <%= dress.user.name %></p>
+              <p class="top-cards"><%= sprintf("%.2f", dress.price_per_day) %> € per day | <%= dress.size %> | <%= dress.category %></p>
+              <p class="top-cards">By <%= dress.user.name %></p>
             </div>
-            <p class="card-trip-pricing"><%= sprintf("%.2f", dress.price_per_day) %> €/day</p>
+
           </div>
+        </div>
         </div>
       <%end%>
     <%end%>
+    </div>
   </div>
 </div>
