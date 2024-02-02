@@ -1,15 +1,17 @@
 <div class="booking_container">
 <div class="booking_form">
-<h3>Request a new booking</h3>
+<h4>REQUEST A NEW BOOKING</h4>
 
 <%= simple_form_for [@dress, @booking] do |f| %>
   <%= f.input :start_date,
+            label: "From",
             as: :string,
             input_html: { data: { controller: "datepicker" } } %>
   <%= f.input :end_date,
+            label: "Until",
             as: :string,
             input_html: { data: { controller: "datepicker" } } %>
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "btn-test", value: "Confirm" %>
 <% end %>
 </div>
 </div>

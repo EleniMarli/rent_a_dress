@@ -1,6 +1,6 @@
 <div class="booking_container">
 <div class="booking_form">
-<h3>Add a New Dress</h3>
+<h4>ADD A NEW DRESS</h4>
 <%= simple_form_for @dress do |f| %>
   <%= f.input :title%>
   <%= f.input :description%>
@@ -9,7 +9,7 @@
   <%= f.input :category, collection: Dress::CATEGORY %>
   <%= f.input :price_per_day%>
   <%= f.input :photo, as: :file %>
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "btn-test", value: "Confirm" %>
 <% end %>
 </div>
 </div>
