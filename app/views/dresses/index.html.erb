@@ -1,29 +1,30 @@
 <div class="banner">
   <div class="container">
     <h1> <strong>Rent A Dress</strong></h1>
-    <p>It's Time to Party!</p>
+    <p>No stress to dress</p>
   </div>
 </div>
 
 
-
-<div class="cards">
-  <% @dresses.each do |dress| %>
-    <% if @user != dress.user %>
-      <div class="profile-card">
-      <% if dress.photo.attached? %>
-        <%= cl_image_tag dress.photo.key%>
-      <% end %>
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= link_to dress.title, dress_path(dress) %></h2>
-            <p>Size: <%= dress.size %></p>
-            <p>"<%= dress.description %>"</p>
-            <p>Owner: <%= dress.user.name %></p>
+<div class="background-beige">
+  <div class="cards">
+    <% @dresses.each do |dress| %>
+      <% if @user != dress.user %>
+        <div class="profile-card">
+        <% if dress.photo.attached? %>
+          <%= cl_image_tag dress.photo.key%>
+        <% end %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= link_to dress.title, dress_path(dress) %></h2>
+              <p>Size: <%= dress.size %></p>
+              <p>"<%= dress.description %>"</p>
+              <p>Owner: <%= dress.user.name %></p>
+            </div>
+            <p class="card-trip-pricing"><%= sprintf("%.2f", dress.price_per_day) %> €/day</p>
           </div>
-          <p class="card-trip-pricing"><%= sprintf("%.2f", dress.price_per_day) %> €/day</p>
         </div>
-      </div>
+      <%end%>
     <%end%>
-  <%end%>
+  </div>
 </div>
