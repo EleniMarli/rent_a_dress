@@ -85,7 +85,7 @@ dress_3.save
 
 # Dress 4
 
-file_4 = URI.open("https://images.unsplash.com/photo-1588824051376-0063738d61e0?q=80&w=2062&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+file_4 = URI.open("https://images.unsplash.com/photo-1631234764568-996fab371596?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 
 dress_4 = Dress.new(
   title: 'Elegant Gown',
@@ -117,7 +117,7 @@ dress_5.photo.attach(io: file_5, filename: "dress_5.png", content_type: "image/p
 dress_5.save
 
 # Dress 6
-file_6 = URI.open("https://images.unsplash.com/flagged/photo-1585052201332-b8c0ce30972f?q=80&w=2235&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+file_6 = URI.open("https://images.unsplash.com/photo-1596783047904-4000addd05cd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 
 dress_6 = Dress.new(
   title: 'Cute Dress',
@@ -149,11 +149,11 @@ dress_7.photo.attach(io: file_7, filename: "dress_7.png", content_type: "image/p
 dress_7.save
 
 # Dress 8
-file_8 = URI.open("https://images.unsplash.com/photo-1582533575066-75bd83ac91de?q=80&w=2160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+file_8 = URI.open("https://images.unsplash.com/photo-1623098943463-e4c0ebcf5f4a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGRyZXNzZXN8ZW58MHx8MHx8fDA%3D")
 
 dress_8 = Dress.new(
-  title: 'Glitter Cocktail',
-  description: 'A bold glitter cocktail dress.',
+  title: 'Cocktail Dress',
+  description: 'A sweet white cocktail dress.',
   size: 'l',
   user: user_2,
   color: 'silver',
