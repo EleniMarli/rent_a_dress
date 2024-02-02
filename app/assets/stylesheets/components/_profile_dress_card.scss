@@ -7,6 +7,20 @@
   margin: 0 11px;
   height: 450px;
   padding:0;
+  position: relative;
+
+  .cancel {
+    position: absolute;
+    top: 5%;
+    left: 70%;
+    font-family: $body-font;
+
+    a {
+      font-family: $body-font;
+      text-decoration: none;
+      color: black;
+    }
+  }
 
   .top-cards {
     opacity: .4;

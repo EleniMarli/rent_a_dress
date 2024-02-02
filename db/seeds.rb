@@ -27,7 +27,7 @@ user_2 = User.create!(
 
 # Dress 1
 
-file_1 = URI.open("https://images.unsplash.com/flagged/photo-1585052201332-b8c0ce30972f?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+file_1 = URI.open("https://images.unsplash.com/flagged/photo-1576572093163-83b5ad089423?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 
 dress_1 = Dress.new(
   title: 'Summer Maxi Dress',
@@ -44,11 +44,11 @@ dress_1.save
 
 # Dress 2
 
-file_2 = URI.open("https://images.unsplash.com/photo-1599662875272-64de8289f6d8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+file_2 = URI.open("https://images.unsplash.com/photo-1582110915002-ea6374a4da95?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 
 dress_2 = Dress.new(
-  title: 'Black Cocktail Dress',
-  description: 'A timeless black cocktail dress for any formal occasion.',
+  title: 'Grey Flowy Dress',
+  description: 'A timeless gray cocktail dress for any formal occasion.',
   size: 's',
   user: user_2,
   color: 'black',
@@ -61,7 +61,7 @@ dress_2.save
 
 # Dress 3
 
-file_3 = URI.open("https://images.unsplash.com/photo-1517970640957-23d07d5ed08c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmxvcmFsJTIwZHJlc3N8ZW58MHx8MHx8fDA%3D")
+file_3 = URI.open("https://images.unsplash.com/photo-1605763240000-7e93b172d754?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 
 dress_3 = Dress.new(
   title: 'Floral Sundress',
@@ -78,7 +78,7 @@ dress_3.save
 
 # Dress 4
 
-file_4 = URI.open("https://images.unsplash.com/photo-1612336307429-8a898d10e223?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+file_4 = URI.open("https://images.unsplash.com/photo-1533659828870-95ee305cee3e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 
 dress_4 = Dress.new(
   title: 'Elegant Evening Gown',

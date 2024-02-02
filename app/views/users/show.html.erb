@@ -15,12 +15,15 @@
       </div>
     <%end%>
   </div>
+  <div class="add">
+    <%= link_to 'Add a dress', new_dress_path %>
+  </div>
 </div>
 
-<%= link_to 'Add a dress', new_dress_path %>
+
 
 <div class='background-profile-second'>
-  <h4>MY BOOKINGS</h4>
+  <h4>I HAVE BOOKED</h4>
   <div class="cards">
     <%if @bookings%>
       <div class="row justify">
@@ -36,7 +39,7 @@
                 </p>
 
                 <p class="d-flex justify-content-between">
-                  <span class="opacity">Total cost: <%= sprintf("%.2f", booking.dress.price_per_day * (booking.end_date - booking.start_date)) %> €</span>
+                  <span class="opacity">Total price: <%= sprintf("%.2f", booking.dress.price_per_day * (booking.end_date - booking.start_date)) %> €</span>
                   <%if booking.accepted?%>
                     <span class="green"><%= booking.status %></span>
                   <%elsif booking.declined?%>
@@ -46,6 +49,16 @@
                   <%end%>
                 </p>
               </div>
+              <% if booking.accepted? %>
+              <div class="cancel">
+                <%= link_to 'Cancel', booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure? There will be a penalty fee!"} %>
+              </div>
+              <%end%>
+              <% if booking.pending? %>
+                <div class="cancel">
+                  <%= link_to 'Cancel', booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure? There will not be a penalty fee."} %>
+                </div>
+              <%end%>
             </div>
         <%end%>
       </div>
@@ -53,22 +66,45 @@
   </div>
 </div>
 
-
-<h4>Booking requests from other users:</h4>
-<%if @booking_requests%>
-  <ul>
-  <% @booking_requests.each do |booking_request| %>
-    <li>
-      <h5>Title: <%= booking_request.dress.title %> </h5>
-      <h5>From: <%= booking_request.start_date %> </h5>
-      <h5>Until: <%= booking_request.end_date %> </h5>
-      <h5>Total price: <%= (booking_request.dress.price_per_day * (booking_request.end_date - booking_request.start_date)) %> €</h5>
-      <h5>Status: <%= booking_request.status %></h5>
-      <%if booking_request.pending? %>
-        <%= link_to '✔️', accept_booking_path(booking_request), data: {turbo_method: :patch, turbo_confirm: "Are you sure? This action can't be reversed!"} %>
-        <%= link_to '❌', decline_booking_path(booking_request), data: {turbo_method: :patch, turbo_confirm: "Are you sure? This action can't be reversed!"} %>
+<div class='background-profile-third'>
+  <h4>OTHERS WANT TO BOOK</h4>
+  <div class="bookings-list">
+    <%if @booking_requests%>
+      <% @booking_requests.each do |booking_request| %>
+        <%if !booking_request.declined? %>
+          <div class="card-booking">
+            <%= cl_image_tag booking_request.dress.photo.key %>
+            <div class="card-booking-infos">
+              <h2><%= booking_request.dress.title %></h2>
+              <p class="d-flex justify-content-between">
+                <span class="opacity">From: <%= booking_request.start_date.strftime("%d-%m-%Y") %></span>
+                <span class="opacity">Until: <%= booking_request.end_date.strftime("%d-%m-%Y") %></span>
+              </p>
+              <p class="d-flex justify-content-between">
+                <span class="opacity">Total price: <%= sprintf("%.2f", booking_request.dress.price_per_day * (booking_request.end_date - booking_request.start_date)) %> €</span>
+                <%if booking_request.accepted?%>
+                  <span class="green"><%= booking_request.status %></span>
+                <%elsif booking_request.declined?%>
+                  <span class="red"><%= booking_request.status %></span>
+                <%else%>
+                  <span class="opacity"><%= booking_request.status %></span>
+                <%end%>
+              </p>
+            </div>
+            <%if booking_request.pending? %>
+              <div class="accept-decline position-absolute top-50 d-flex flex-column">
+                <%= link_to 'Accept', accept_booking_path(booking_request), data: {turbo_method: :patch, turbo_confirm: "Are you sure? If you change your mind, there will be a penalty fee!"} %>
+                <%= link_to 'Decline', decline_booking_path(booking_request), data: {turbo_method: :patch, turbo_confirm: "Are you sure? This action can't be reversed!"} %>
+              </div>
+            <%end%>
+            <%if booking_request.accepted? %>
+              <div class="accept-decline position-absolute top-30 d-flex flex-column">
+                <%= link_to 'Decline', decline_booking_path(booking_request), data: {turbo_method: :patch, turbo_confirm: "Are you sure? There will be a penalty fee!"} %>
+              </div>
+            <%end%>
+          </div>
+        <%end%>
       <%end%>
-    </li>
-  <%end%>
-  </ul>
-<%end%>
+    <%end%>
+  </div>
+</div>
