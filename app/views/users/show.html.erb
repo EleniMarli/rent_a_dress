@@ -2,9 +2,7 @@
   <h4 class="">MY DRESSES</h4>
   <div class="container cards">
     <%if @dresses%>
-
       <div class="row row-cols-4 justify ">
-
          <% @dresses.each do |dress| %>
             <div class="space col col-centered ">
             <div class="profile-card">
@@ -31,21 +29,17 @@
   <div class='background-profile-second'>
     <h4>I HAVE BOOKED</h4>
     <div class="container cards">
-
-        <div class="row row-cols-4 justify">
-          <% @bookings.each do |booking| %>
-            <div class="space col col-centered ">
-                <div class="profile-card">
-                  <%= cl_image_tag booking.dress.photo.key %>
-                  <div class="card-trip-infos">
-                    <h2><%= link_to booking.dress.title, dress_path(booking.dress) %></h2>
-
-                    <p class="d-flex justify-content-between">
-                      <span class="opacity">From: <%= booking.start_date.strftime("%d-%m-%Y") %></span>
-                      <span class="opacity">Until: <%= booking.end_date.strftime("%d-%m-%Y") %></span>
-                    </p>
-
-
+      <div class="row row-cols-4 justify">
+        <% @bookings.each do |booking| %>
+          <div class="space col col-centered ">
+            <div class="profile-card">
+              <%= cl_image_tag booking.dress.photo.key %>
+              <div class="card-trip-infos">
+                <h2><%= link_to booking.dress.title, dress_path(booking.dress) %></h2>
+                <p class="d-flex justify-content-between">
+                  <span class="opacity">From: <%= booking.start_date.strftime("%d-%m-%Y") %></span>
+                  <span class="opacity">Until: <%= booking.end_date.strftime("%d-%m-%Y") %></span>
+                </p>
                 <p class="d-flex justify-content-between">
                   <span class="opacity">Total price: <%= sprintf("%.2f", booking.dress.price_per_day * (booking.end_date - booking.start_date)) %> €</span>
                   <%if booking.accepted?%>
@@ -58,21 +52,15 @@
                 </p>
               </div>
               <% if booking.accepted? %>
-
-                  <%= link_to 'Cancel', booking_path(booking), class: "btn-small m-0 btn-cancel", data: {turbo_method: :delete, turbo_confirm: "Are you sure? There will be a penalty fee!"} %>
-
+                <%= link_to 'Cancel', booking_path(booking), class: "btn-small m-0 btn-cancel", data: {turbo_method: :delete, turbo_confirm: "Are you sure? There will be a penalty fee!"} %>
               <%end%>
               <% if booking.pending? %>
-
-                  <%= link_to 'Cancel', booking_path(booking), class: "btn-small m-0 btn-cancel", data: {turbo_method: :delete, turbo_confirm: "Are you sure? There will not be a penalty fee."} %>
-
+                <%= link_to 'Cancel', booking_path(booking), class: "btn-small m-0 btn-cancel", data: {turbo_method: :delete, turbo_confirm: "Are you sure? There will not be a penalty fee."} %>
               <%end%>
             </div>
-            </div>
-
-          <%end%>
-        </div>
-
+          </div>
+        <%end%>
+      </div>
     </div>
   </div>
 <%end%>
