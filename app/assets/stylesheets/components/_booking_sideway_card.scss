@@ -7,10 +7,17 @@
   border-radius: 5px;
   display: flex;
   align-items: center;
-  margin-left: 24%;
-  margin-right: 24%;
+  margin-left: 25%;
+  margin-right: 25%;
   position: relative;
   margin-bottom:22px;
+
+  .card-booking-text-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 81%;
+  }
 
   .accept-decline {
 
@@ -58,5 +65,5 @@
 
 .card-booking .card-booking-infos {
   padding: 16px;
-  width: 37%;
+  width: 47%;
 }
