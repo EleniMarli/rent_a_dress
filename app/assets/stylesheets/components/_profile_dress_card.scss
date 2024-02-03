@@ -9,18 +9,7 @@
   padding:0;
   position: relative;
 
-  .cancel {
-    position: absolute;
-    top: 1%;
-    left: 45%;
-    font-family: $body-font;
 
-    a {
-      font-family: $body-font;
-      text-decoration: none;
-      color: black;
-    }
-  }
 
   .top-cards {
     opacity: .4;

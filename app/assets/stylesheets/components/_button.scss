@@ -17,23 +17,6 @@
   }
 }
 
-.btn-small {
-  color: white;
-  font-size: 15px;
-  padding: 8px 10px;
-  border-radius: 4px;
-  background: #7895B2;
-  transition: background 0.3s ease;
-  width: 50px;
-  border: none;
-  text-decoration: none;
-
-  a {
-    text-decoration: none;
-    color: white!important;
-  }
-
-}
 
 .btn-test:hover {
   background: #5a7086;
@@ -55,8 +38,6 @@
   transition: background 0.3s ease;
   width: 100px;
   border: none;
-  margin-top: 8px;
-  margin-left: 24px;
   text-decoration: none;
 }
 
@@ -80,8 +61,42 @@ a {
   text-decoration: none;
 
   &:hover {
-    background: #566b80;
+    background: #5a7086;
     color: white;
+    filter: brightness(95%)
+  }
+
+}
+
+
+.btn-cancel {
+  color: white;
+  font-size: 15px;
+  width: 34%;
+  border-radius: 4px;
+  background: #7895B2;
+  transition: background 0.3s ease;
+
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+  top: 1.9%;
+  left: 62%;
+  font-family: $body-font;
+
+
+    &:hover {
+      background: #5a7086;
+      color: white;
+      filter: brightness(95%)
+
+  }
+
+  &:hover {
+    background: #5a7086;
+    color: white;
+    filter: brightness(95%)
   }
 
 }
