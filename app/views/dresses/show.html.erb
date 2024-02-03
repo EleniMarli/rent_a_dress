@@ -4,23 +4,27 @@
   <div class="details-card">
     <%= cl_image_tag @dress.photo.key %>
     <div class="details-infos">
-        <p><b>Description:</b> <%= @dress.description %> </p>
-        <p><b>Size:</b> <%= @dress.size %>  |  <b>Color:</b> <%= @dress.color %>  |  <b>Category:</b> <%= @dress.category %> </p>
-        <p><b>Price:</b> <%= sprintf("%.2f", @dress.price_per_day) %> € per day  |  <b>Owner:</b> <%= @dress.user.name %></p>
+      <div class="desc">
+        <p class="desc-text">"<%= @dress.description %>"</p>
+      </div>
+      <div class = "bottom-infos">
+        <p><%= @dress.size %> | <%= @dress.color %> | <%= @dress.category %> </p>
+        <p><%= sprintf("%.2f", @dress.price_per_day) %> € per day | by <%= @dress.user.name %></p>
+      </div>
     </div>
 
     <div class="btn-container">
     <% if current_user != @dress.user %>
       <button class="btn-test">
-        <%=link_to 'Book', new_dress_booking_path(@dress)%> <i class="fa-regular fa-calendar"></i>
+        <span class="d-flex justify-content-evenly align-items-center"><%=link_to 'Book', new_dress_booking_path(@dress)%> <i class="fa-regular fa-calendar"></i></span>
       </button>
     <%end%>
     <% if current_user == @dress.user %>
       <button class="btn-test">
-        <%=link_to 'Update', edit_dress_path(@dress)%> <i class="fa-regular fa-pen-to-square"></i>
+        <span class="d-flex justify-content-evenly align-items-center"><%=link_to 'Update', edit_dress_path(@dress)%> <i class="fa-regular fa-pen-to-square"></i></span>
       </button>
       <button class="btn-test">
-        <%=link_to 'Delete', dress_path(@dress), data: {turbo_method: :delete, turbo_confirm: "Are you sure? This action can't be reversed!"} %> <i class="fa-solid fa-trash"></i>
+        <span class="d-flex justify-content-evenly align-items-center"><%=link_to 'Delete', dress_path(@dress), data: {turbo_method: :delete, turbo_confirm: "Are you sure? This action can't be reversed!"} %> <i class="fa-solid fa-trash"></i></span>
       </button>
     <%end%>
     </div>
