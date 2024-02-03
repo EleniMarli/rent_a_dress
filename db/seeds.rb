@@ -32,6 +32,12 @@ user_3 = User.create!(
   password: '123456'
 )
 
+user_4 = User.create!(
+  name: 'Marie',
+  email: 'marie@email.com',
+  password: '123456'
+)
+
 # 12 Dresses (dress 1-4 by user 1, dress 5-8 by user 2, dress 9-12 by user 3)
 
 file_1 = URI.open("https://images.unsplash.com/flagged/photo-1576572093163-83b5ad089423?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
@@ -227,6 +233,70 @@ dress_12 = Dress.new(
 
 dress_12.photo.attach(io: file_12, filename: "dress_12.png", content_type: "image/png")
 dress_12.save
+
+# Dress 13
+file_13 = URI.open("https://images.unsplash.com/photo-1609357605129-26f69add5d6e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+
+dress_13 = Dress.new(
+  title: 'Elegant Green Dress',
+  description: 'A stylish green dress suitable for any occasion.',
+  size: 's',
+  user: user_4,
+  color: 'green',
+  category: 'cocktail',
+  price_per_day: 35.00
+)
+
+dress_13.photo.attach(io: file_13, filename: "dress_13.png", content_type: "image/png")
+dress_13.save
+
+# Dress 14
+file_14 = URI.open("https://images.unsplash.com/photo-1565462905097-5e701c31dcfb?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+
+dress_14 = Dress.new(
+  title: 'Chic White Dress',
+  description: 'A trendy and chic white short dress for a stylish look.',
+  size: 's',
+  user: user_4,
+  color: 'white',
+  category: 'summer',
+  price_per_day: 30.00
+)
+
+dress_14.photo.attach(io: file_14, filename: "dress_14.png", content_type: "image/png")
+dress_14.save
+
+# Dress 15
+file_15 = URI.open("https://images.unsplash.com/photo-1592805585553-3d9b4cd33720?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+
+dress_15 = Dress.new(
+  title: 'Floral Green Dress',
+  description: 'A beautiful flowery white dress perfect for a summer day.',
+  size: 'm',
+  user: user_4,
+  color: 'white',
+  category: 'summer',
+  price_per_day: 40.00
+)
+
+dress_15.photo.attach(io: file_15, filename: "dress_15.png", content_type: "image/png")
+dress_15.save
+
+# Dress 16
+file_16 = URI.open("https://images.unsplash.com/photo-1496217590455-aa63a8350eea?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+
+dress_16 = Dress.new(
+  title: 'Everyday City Dress',
+  description: 'A charming baby blue city dress with a vintage touch.',
+  size: 'l',
+  user: user_4,
+  color: 'baby blue',
+  category: 'casual',
+  price_per_day: 45.00
+)
+
+dress_16.photo.attach(io: file_16, filename: "dress_16.png", content_type: "image/png")
+dress_16.save
 
 # Bookings done by user 1 (4 in total)
 booking_1 = Booking.create!(
