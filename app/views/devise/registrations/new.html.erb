@@ -1,11 +1,11 @@
-<div class="small-form-background">
+<div class="small-form-background sign-up">
   <div class="booking_form">
     <h4>SIGN UP</h4>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
-      <div class="form-inputs sign-up">
+      <div class="form-inputs sign-up-form">
         <%= f.input :name,
                     required: true,
                     autofocus: true,
