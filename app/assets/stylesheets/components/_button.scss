@@ -79,4 +79,9 @@ a {
   border: none;
   text-decoration: none;
 
+  &:hover {
+    background: #566b80;
+    color: white;
+  }
+
 }
