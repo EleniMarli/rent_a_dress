@@ -1,17 +1,16 @@
-<div class="booking_container">
-<div class="booking_form">
-<h4>EDIT YOUR DRESS</h4>
-<%= simple_form_for @dress do |f| %>
-  <%= f.input :title%>
-  <%= f.input :description%>
-  <%= f.input :size, collection: Dress::SIZE %>
-  <%= f.input :color%>
-  <%= f.input :category, collection: Dress::CATEGORY %>
-  <%= f.input :price_per_day%>
-  <%= f.button :button, class: "btn-test", value: "" do %>
-    Confirm <i class="fa-solid fa-check"></i>
+<div class="booking_container dress">
+  <div class="booking_form dress-form">
+    <h4>EDIT YOUR DRESS</h4>
+    <%= simple_form_for @dress do |f| %>
+      <%= f.input :title%>
+      <%= f.input :description%>
+      <%= f.input :size, collection: Dress::SIZE %>
+      <%= f.input :color%>
+      <%= f.input :category, collection: Dress::CATEGORY %>
+      <%= f.input :price_per_day%>
+      <div class="d-flex justify-content-center mt-5">
+        <%= f.button :button, 'Confirm', class: "btn-test" %>
+      </div>
     <% end %>
-<% end %>
-
-</div>
+  </div>
 </div>
