@@ -21,7 +21,7 @@
   </div>
   <div class="add">
   <button class="btn-test extra">
-    <%= link_to 'Add dress', new_dress_path %> <i class="fa-solid fa-plus"></i>
+    <%= link_to 'Add dress', new_dress_path %>
   </button>
   </div>
 </div>
@@ -62,7 +62,6 @@
                   <button class="btn-small">
                     <%= link_to booking_path(booking), class: "btn-small p-0 m-0", data: {turbo_method: :delete, turbo_confirm: "Are you sure? There will be a penalty fee!"} do %>
                       Cancel
-                      <i class="fa-solid fa-xmark"></i>
                     <%end%>
                   </button>
                 </div>
@@ -70,9 +69,8 @@
               <% if booking.pending? %>
                 <div class="cancel">
                   <button class="btn-small">
-                    <%= link_to booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure? There will not be a penalty fee."} do %>
+                    <%= link_to booking_path(booking), class: "btn-small p-0 m-0", data: {turbo_method: :delete, turbo_confirm: "Are you sure? There will not be a penalty fee."} do %>
                       Cancel
-                      <i class="fa-solid fa-xmark"></i>
                     <%end%>
                   </button>
                 </div>

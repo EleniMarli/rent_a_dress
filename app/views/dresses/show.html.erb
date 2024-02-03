@@ -14,19 +14,21 @@
     </div>
 
     <div class="btn-container">
-    <% if current_user != @dress.user %>
-      <button class="btn-test">
-        <span class="d-flex justify-content-evenly align-items-center"><%=link_to 'Book', new_dress_booking_path(@dress)%> <i class="fa-regular fa-calendar"></i></span>
-      </button>
-    <%end%>
-    <% if current_user == @dress.user %>
-      <button class="btn-test">
-        <span class="d-flex justify-content-evenly align-items-center"><%=link_to 'Update', edit_dress_path(@dress)%> <i class="fa-regular fa-pen-to-square"></i></span>
-      </button>
-      <button class="btn-test">
-        <span class="d-flex justify-content-evenly align-items-center"><%=link_to 'Delete', dress_path(@dress), data: {turbo_method: :delete, turbo_confirm: "Are you sure? This action can't be reversed!"} %> <i class="fa-solid fa-trash"></i></span>
-      </button>
-    <%end%>
+      <% if current_user != @dress.user %>
+        <button class="btn-test">
+          <span class="d-flex justify-content-evenly align-items-center"><%=link_to 'Book', new_dress_booking_path(@dress)%></span>
+        </button>
+      <%end%>
+      <% if current_user == @dress.user %>
+
+          <button class="btn-test mx-3">
+            <%=link_to 'Update', edit_dress_path(@dress)%>
+          </button>
+          <button class="btn-test mx-3">
+            <%=link_to 'Delete', dress_path(@dress), data: {turbo_method: :delete, turbo_confirm: "Are you sure? This action can't be reversed!"} %>
+          </button>
+
+      <%end%>
     </div>
   </div>
 </div>

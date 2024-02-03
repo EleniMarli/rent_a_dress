@@ -1,19 +1,27 @@
-<div class="booking_container new-booking">
-<div class="booking_form">
-<h4>REQUEST A NEW BOOKING</h4>
+<div class="small-form-background new-booking">
 
-<%= simple_form_for [@dress, @booking] do |f| %>
-  <%= f.input :start_date,
-            label: "From",
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-  <%= f.input :end_date,
-            label: "Until",
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-  <%= f.button :button, class: "btn-test", value: "" do %>
-    Confirm <i class="fa-solid fa-check"></i>
+  <div class="booking_form">
+  <h4>REQUEST A NEW BOOKING</h4>
+  <div class ="form-booking-new">
+    <%= simple_form_for [@dress, @booking] do |f| %>
+      <div class="top">
+        <%= f.input :start_date,
+                  label: "From",
+                  as: :string,
+                  input_html: { data: { controller: "datepicker" } } %>
+        <%= f.input :end_date,
+                  label: "Until",
+                  as: :string,
+                  input_html: { data: { controller: "datepicker" } } %>
+        </div>
+      <div class="form-button">
+
+        <%= f.button :button, class: "btn-test", value: "" do %>
+          Confirm
+        <% end %>
+
+      </div>
     <% end %>
-<% end %>
-</div>
+    </div>
+  </div>
 </div>
